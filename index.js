@@ -10,11 +10,17 @@ module.exports = {
     // exec: spawns a shell.
     child_process.exec(binary, function(error, stdout, stderr){
       // TODO, parse the output from the board
-      stdout.id = 1234;
-      stdout.value = "herp derp";
-      return {
-        id: stdout.id,
-        value: stdout.value
+      // If it looks like this could be what we want
+      if(stdout.indexOf("SO14443A UID") === 0){
+        var id = stdout.replace("SO14443A UID","");
+      }
+      if(stdout.indexOf("URI") === 0 || stdout.indexOf("Title") === 0){
+        stdout = stdout.replace("URI", "");
+        stdout = stdout.replace("Title", "");
+        return {
+          id: id,
+          value: stdout
+        }
       }
     });
 
