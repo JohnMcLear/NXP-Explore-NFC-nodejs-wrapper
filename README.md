@@ -7,7 +7,7 @@ A super simple NodeJS Library to read and write NFC NDEF records on a Raspberry 
 ## Prerequesities
 1. Install NFC Explore software on your device.
 
-## Read an NFC device contents
+## Read contents
 ```
 var nfc = require("explorenfc");
 nfc.init("/bin/explore-nfc");
@@ -18,7 +18,7 @@ nfc.read(function(nfcEvent){
 });
 ```
 
-## Write data
+## Write contents
 ```
 var nfc = require("explorenfc");
 nfc.init("/bin/explore-nfc");
