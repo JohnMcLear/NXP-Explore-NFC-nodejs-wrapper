@@ -9,9 +9,12 @@ module.exports = {
   read: function(){
     // exec: spawns a shell.
     child_process.exec(binary, function(error, stdout, stderr){
+      // TODO, parse the output from the board
+      stdout.id = 1234;
+      stdout.value = "herp derp";
       return {
-        id: "12312323",
-        value: "herp derp"
+        id: stdout.id,
+        value: stdout.value
       }
     });
 
