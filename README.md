@@ -37,4 +37,5 @@ Functionality is kept intentionally limited to keep this module very simple to u
 
 ## Roughly how it works
 On ``read`` we execute ``explorenfc-basic``
+
 On ``write`` we execute ``explorenfc-basic –w '<your message>' –t <type>``
